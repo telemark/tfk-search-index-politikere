@@ -1,0 +1,62 @@
+{
+  "_id": "56fa66e39fe2ff094b75fc41",
+  "recno": 200376,
+  "name": "Sven Tore Løkslid",
+  "phone": null,
+  "title": "Fylkesordfører",
+  "privateMail": "stl@hjartdal.kommune.no",
+  "mobilePhone": "+47 97 69 86 19",
+  "zip": "3690 HJARTDAL",
+  "address": null,
+  "gender": "Mann",
+  "publicMail": "Sven.Tore.Lokslid2@t-fk.no",
+  "committees": [
+    {
+      "recno": 200376,
+      "groupRecno": 200120,
+      "name": "Arbeiderpartiet",
+      "role": "Parti",
+      "roleDescription": "Partimedlem",
+      "address": "Birgittes gate 19",
+      "place": "SKIEN",
+      "zip": "3730",
+      "mail": null,
+      "tlf": null,
+      "url": "http://telemark.arbeiderparti.no/"
+    },
+    {
+      "recno": 200376,
+      "groupRecno": 216162,
+      "name": "Fylkestinget (01.10.2015 - 30.09.2019)",
+      "role": "Fylkesordfører i",
+      "roleDescription": "Fylkesordfører",
+      "address": null,
+      "place": null,
+      "zip": null,
+      "mail": null,
+      "tlf": null,
+      "url": null
+    },
+    {
+      "recno": 200376,
+      "groupRecno": 216167,
+      "name": "Fylkesutvalet (01.10.2015 - 30.09.2019)",
+      "role": "Fylkesordfører i",
+      "roleDescription": "Fylkesordfører",
+      "address": null,
+      "place": null,
+      "zip": null,
+      "mail": null,
+      "tlf": null,
+      "url": null
+    }
+  ],
+  "committeeIds": [
+    200120,
+    200144,
+    200145,
+    208883,
+    216162,
+    216167
+  ]
+}
