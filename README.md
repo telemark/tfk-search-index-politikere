@@ -2,6 +2,8 @@
 [![Coverage Status](https://coveralls.io/repos/telemark/tfk-search-index-politikere/badge.svg?branch=master&service=github)](https://coveralls.io/github/telemark/tfk-search-index-politikere?branch=master)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
 # tfk-search-index-politikere
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/telemark/tfk-search-index-politikere.svg)](https://greenkeeper.io/)
 Henter ut politikere og dytter til søkeservicen vår
 
 ## Docker
