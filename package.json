@@ -35,11 +35,11 @@
   },
   "devDependencies": {
     "coveralls": "2.11.16",
-    "standard": "10.0.1",
+    "standard": "8.6.0",
     "tap": "10.2.0"
   },
   "dependencies": {
     "jsonwebtoken": "7.3.0",
-    "wreck": "10.0.0"
+    "wreck": "11.0.0"
   }
 }
