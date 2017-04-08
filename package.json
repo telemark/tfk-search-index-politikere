@@ -34,7 +34,7 @@
     "url": "http://github.com/telemark/tfk-search-index-politikere/issues"
   },
   "devDependencies": {
-    "coveralls": "2.12.0",
+    "coveralls": "2.11.16",
     "standard": "8.6.0",
     "tap": "10.2.0"
   },
