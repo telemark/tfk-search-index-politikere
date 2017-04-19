@@ -35,7 +35,7 @@
   },
   "devDependencies": {
     "coveralls": "2.11.16",
-    "standard": "8.6.0",
+    "standard": "10.0.2",
     "tap": "10.3.2"
   },
   "dependencies": {
