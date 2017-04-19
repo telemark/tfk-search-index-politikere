@@ -1,6 +1,6 @@
 {
   "name": "tfk-search-index-politikere",
-  "version": "1.0.15",
+  "version": "1.0.16",
   "description": "Index politicians in elasticsearch",
   "license": "MIT",
   "author": {
