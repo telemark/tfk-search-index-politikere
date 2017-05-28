@@ -39,7 +39,7 @@
     "tap": "10.3.2"
   },
   "dependencies": {
-    "jsonwebtoken": "7.4.0",
+    "jsonwebtoken": "7.4.1",
     "wreck": "12.2.0"
   }
 }
