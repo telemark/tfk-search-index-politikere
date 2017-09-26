@@ -40,6 +40,6 @@
   },
   "dependencies": {
     "jsonwebtoken": "8.0.1",
-    "wreck": "13.0.2"
+    "wreck": "13.0.3"
   }
 }
