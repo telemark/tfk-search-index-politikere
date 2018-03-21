@@ -1,51 +1,44 @@
-'use strict'
+const axios = require('axios')
+const path = require('path')
+const addIndex = require('./lib/add-index')
+const deleteIndex = require('./lib/delete-index')
+const repackPolitician = require('./lib/repack-politician')
+const prepareIndex = require('./lib/prepare-index')
+const logger = require('./lib/logger')
+const env = process.argv[2]
 
-var Wreck = require('wreck')
-var config = require('./config')
-var addIndex = require('./lib/add-index')
-var deleteIndex = require('./lib/delete-index')
-var repackPolitician = require('./lib/repack-politician')
-var wreckOptions = {
-  json: true
+if (env) {
+  const envFilePath = path.resolve(process.cwd(), env)
+  logger('info', ['index', 'loading environment', env])
+  require('dotenv').config({path: envFilePath})
+} else {
+  logger('warn', ['index', 'no environment loaded'])
 }
 
-function indexPoliticians (results) {
-  var list = JSON.parse(JSON.stringify(results))
+async function indexPoliticians () {
+  const { data } = await axios.get(process.env.SOURCE_URL)
+  const msg = await deleteIndex()
+  logger('info', ['index', 'indexPoliticians', 'index deleted', JSON.stringify(msg)])
+  let list = data.map(repackPolitician).map(prepareIndex)
+  logger('info', ['index', 'indexPoliticians', 'politicians to index', list.length])
+  let success = 0
+  let fail = 0
 
-  function next () {
+  const next = async () => {
     if (list.length > 0) {
-      var politician = list.pop()
-      var content = repackPolitician(politician)
-
-      addIndex(content, function (err, payload) {
-        if (err) {
-          console.error(err)
-        } else {
-          console.log(payload)
-          next()
-        }
-      })
+      const politician = list.pop()
+      try {
+        await addIndex(politician)
+        success++
+      } catch (error) {
+        fail++
+      }
+      await next()
     } else {
-      console.log('Finished indexing')
+      logger('info', ['index', 'indexPoliticians', 'finished', 'success', success, 'fail', fail])
     }
   }
-
-  next()
+  await next()
 }
 
-function handlePoliticians (error, repsonse, payload) {
-  if (error) {
-    console.error(error)
-  } else {
-    indexPoliticians(payload)
-  }
-}
-
-deleteIndex(function (error, payload) {
-  if (error) {
-    console.error(error)
-  } else {
-    console.log(payload)
-    Wreck.get(config.SOURCE_URL, wreckOptions, handlePoliticians)
-  }
-})
+indexPoliticians()

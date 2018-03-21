@@ -1,19 +1,10 @@
-###########################################################
-#
-# Dockerfile for tfk-search-index-politikere
-#
-###########################################################
-
-# Setting the base to nodejs 4.4.3
-FROM mhart/alpine-node:4.4.3
-
-# Maintainer
-MAINTAINER Geir Gåsodden
+# Setting the base to nodejs 8.10.0
+FROM node:8.10.0-alpine
 
 #### Begin setup ####
 
 # Installs git
-RUN apk add --update git && rm -rf /var/cache/apk/*
+RUN apk add --update --no-cache git
 
 # Bundle app source
 COPY . /src
@@ -24,13 +15,5 @@ WORKDIR "/src"
 # Install dependencies
 RUN npm install --production
 
-# Env variables
-ENV JWT_KEY "Louie Louie, oh no, I got to go"
-ENV SEARCH_SERVICE_URL https://search.service.com/api
-ENV SEARCH_SERVICE_INDEX politicians
-ENV SEARCH_SERVICE_INDEX_TYPE politician
-ENV SOURCE_URL "http://www.yoursite.com/api/politicians.json"
-ENV SITE_URL "http://www.yoursite.com/politicians"
-
 # Startup
-ENTRYPOINT node index
+ENTRYPOINT node index.js
