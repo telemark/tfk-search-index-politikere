@@ -1,6 +1,5 @@
 const axios = require('axios')
 const path = require('path')
-const sleep = require('then-sleep')
 const addIndex = require('./lib/add-index')
 const deleteIndex = require('./lib/delete-index')
 const repackPolitician = require('./lib/repack-politician')
@@ -41,7 +40,6 @@ async function indexPoliticians () {
       } catch (error) {
         fail++
       }
-      await sleep(100)
       await next()
     } else {
       logger('info', ['index', 'indexPoliticians', 'finished', 'success', success, 'fail', fail])
