@@ -43,6 +43,7 @@ async function indexPoliticians () {
       await next()
     } else {
       logger('info', ['index', 'indexPoliticians', 'finished', 'success', success, 'fail', fail])
+      process.exit(0)
     }
   }
   await next()
