@@ -42,7 +42,7 @@
     "tap": "13.1.10"
   },
   "dependencies": {
-    "axios": "0.18.0",
+    "axios": "0.19.0",
     "dotenv": "8.0.0",
     "jsonwebtoken": "8.5.1",
     "uuid-random": "1.0.9",
