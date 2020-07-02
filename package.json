@@ -46,7 +46,7 @@
     "dotenv": "8.0.0",
     "jsonwebtoken": "8.5.1",
     "uuid-random": "1.0.9",
-    "winston": "2.4.4",
+    "winston": "2.4.5",
     "winston-papertrail": "1.0.5"
   }
 }
